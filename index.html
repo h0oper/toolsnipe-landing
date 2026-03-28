@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToolSnipe — Compare Tool Prices Across Every Major Retailer</title>
+  <meta name="description" content="ToolSnipe tracks Milwaukee, DeWalt, Makita, and Ryobi tool prices across Home Depot, Amazon, Lowe's, and more. Set price alerts and never overpay for power tools again." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ToolSnipe — Compare Tool Prices Across Every Major Retailer" />
+  <meta property="og:description" content="Track Milwaukee, DeWalt, Makita, and Ryobi tool prices across Home Depot, Amazon, Lowe's, and more. Set price alerts and never overpay again." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://toolsnipe.com" />
+  <meta property="og:image" content="https://toolsnipe.com/assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@toolsnipe" />
+  <meta name="twitter:title" content="ToolSnipe — Compare Tool Prices" />
+  <meta name="twitter:description" content="Track tool prices across Home Depot, Amazon, Lowe's, and more. Price history, alerts, and cross-retailer comparisons." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo" aria-label="ToolSnipe home">
+      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#f97316"/>
+        <path d="M8 12h4v8H8zM14 8h4v12h-4zM20 10h4v10h-4z" fill="white"/>
+        <path d="M7 22h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">ToolSnipe</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#signup" class="btn-nav-cta">Get Early Access</a>
+    </nav>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">Coming Soon &mdash; Join the Waitlist</div>
+      <h1>Stop overpaying<br />for power tools.</h1>
+      <p class="hero-sub">
+        ToolSnipe tracks Milwaukee, DeWalt, Makita, and Ryobi prices across
+        Home Depot, Amazon, Lowe's, and more &mdash; so you buy at the right moment.
+      </p>
+      <form class="hero-form" action="https://formspree.io/f/mvzvzajn" method="POST" onsubmit="handleHeroSignup(event, this)">
+        <div class="hero-form-row">
+          <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit" class="btn-primary">Alert Me</button>
+        </div>
+        <p class="hero-form-note">No spam. Unsubscribe anytime.</p>
+        <div class="form-success" style="display:none;">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          You're on the list! We'll email you when we launch.
+        </div>
+      </form>
+      <div class="hero-social-proof">
+        <span>Tracking prices on:</span>
+        <span class="retailer-pill">Home Depot</span>
+        <span class="retailer-pill">Amazon</span>
+        <span class="retailer-pill">Lowe's</span>
+      </div>
+    </div>
+    <div class="hero-mockup" aria-hidden="true">
+      <!-- Mockup: Product Price Comparison Card -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-product-img">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="80" height="80" rx="8" fill="#2d3347"/>
+              <!-- Drill icon -->
+              <rect x="12" y="38" width="32" height="12" rx="3" fill="#f97316"/>
+              <rect x="40" y="34" width="16" height="5" rx="2" fill="#94a3b8"/>
+              <rect x="54" y="33" width="14" height="3" rx="1.5" fill="#cbd5e1"/>
+              <circle cx="20" cy="52" r="6" fill="#1c2035" stroke="#475569" stroke-width="2"/>
+              <circle cx="20" cy="52" r="2.5" fill="#475569"/>
+              <rect x="18" y="44" width="4" height="6" fill="#1c2035"/>
+              <rect x="14" y="38" width="6" height="16" rx="2" fill="#e67e22"/>
+              <rect x="42" y="28" width="10" height="8" rx="2" fill="#64748b"/>
+            </svg>
+          </div>
+          <div class="mockup-product-info">
+            <div class="mockup-brand">Milwaukee</div>
+            <div class="mockup-name">M18 FUEL 1/2" Drill Driver Kit</div>
+            <div class="mockup-model">Model: 2804-22</div>
+            <div class="mockup-rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">4.8 (2,341)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-section-label">Current Prices</div>
+        <div class="mockup-price-table">
+          <div class="mockup-price-row best">
+            <div class="mockup-retailer">
+              <span class="retailer-dot hd"></span>Home Depot
+            </div>
+            <div class="mockup-price-col">
+              <span class="price">$219.00</span>
+              <span class="badge-best">Lowest</span>
+            </div>
+            <a href="#signup" class="mockup-btn">View Deal →</a>
+          </div>
+          <div class="mockup-price-row">
+            <div class="mockup-retailer">
+              <span class="retailer-dot amz"></span>Amazon
+            </div>
+            <div class="mockup-price-col">
+              <span class="price">$234.95</span>
+            </div>
+            <a href="#signup" class="mockup-btn muted">View Deal →</a>
+          </div>
+          <div class="mockup-price-row">
+            <div class="mockup-retailer">
+              <span class="retailer-dot lowes"></span>Lowe's
+            </div>
+            <div class="mockup-price-col">
+              <span class="price">$239.00</span>
+            </div>
+            <a href="#signup" class="mockup-btn muted">View Deal →</a>
+          </div>
+        </div>
+
+        <div class="mockup-section-label">30-Day Price History</div>
+        <div class="mockup-chart">
+          <svg viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="sparkline">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- Area fill -->
+            <path d="M0 45 L20 42 L40 44 L60 40 L80 38 L100 35 L120 20 L140 22 L160 38 L180 36 L200 30 L220 28 L240 22 L260 19 L260 60 L0 60 Z" fill="url(#chartGrad)"/>
+            <!-- Line -->
+            <path d="M0 45 L20 42 L40 44 L60 40 L80 38 L100 35 L120 20 L140 22 L160 38 L180 36 L200 30 L220 28 L240 22 L260 19" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Current price dot -->
+            <circle cx="260" cy="19" r="4" fill="#f97316"/>
+          </svg>
+          <div class="chart-labels">
+            <span>30 days ago</span>
+            <span>Today</span>
+          </div>
+        </div>
+        <div class="mockup-stats">
+          <div class="stat"><span class="stat-label">30-day low</span><span class="stat-val">$199</span></div>
+          <div class="stat"><span class="stat-label">All-time low</span><span class="stat-val">$189</span></div>
+          <div class="stat"><span class="stat-label">Avg price</span><span class="stat-val">$229</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Three steps between you and the best tool price on the internet.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="14" stroke="#f97316" stroke-width="3"/>
+            <path d="M32 32l8 8" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Search Any Tool</h3>
+        <p>Search by brand, model number, or category. We cover Milwaukee, DeWalt, Makita, Ryobi, Hilti, and more.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="10" width="40" height="28" rx="4" stroke="#f97316" stroke-width="3"/>
+            <path d="M16 28V22M24 28V18M32 28V24" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Compare Across Retailers</h3>
+        <p>See live prices from Home Depot, Amazon, Lowe's, and more — side by side, with full price history charts.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6l3.09 9.26H37l-7.91 5.74 3.09 9.26L24 25.52l-8.18 4.74 3.09-9.26L10.91 15.26H20.91z" stroke="#f97316" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M24 35v7M17 40l7 3 7-3" stroke="#f97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Set a Price Alert</h3>
+        <p>Enter your email and target price. We'll notify you the moment any retailer drops to that price — or below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEATURES
+════════════════════════════════════════ -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Price History Charts</h4>
+          <p>See exactly when prices dropped and by how much. Know whether today's sale is actually a deal.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Email Price Alerts</h4>
+          <p>Set your target price once. We monitor 24/7 and email you the moment it hits — across all retailers.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Cross-Retailer Coverage</h4>
+          <p>Home Depot, Amazon, Lowe's, and more in one place. Stop checking five tabs every time there's a sale.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Updated Twice Daily</h4>
+          <p>Prices refresh every 12 hours so you're never working with stale data. Flash sales get caught too.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Curated Tool Catalog</h4>
+          <p>Milwaukee M18/M12, DeWalt 20V/FLEXVOLT, Makita 18V/40V, Ryobi ONE+, Hilti — the brands pros trust.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <h4>No Account Needed</h4>
+          <p>Browse prices and history without signing up. Enter your email only when you want an alert.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     RETAILERS
+════════════════════════════════════════ -->
+<section class="retailers">
+  <div class="container">
+    <p class="retailers-label">Tracking prices at</p>
+    <div class="retailers-grid">
+      <div class="retailer-logo-card">
+        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="40" rx="6" fill="#1c1f2a"/>
+          <rect x="8" y="8" width="24" height="24" rx="4" fill="#f96302"/>
+          <text x="40" y="26" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">Home Depot</text>
+        </svg>
+      </div>
+      <div class="retailer-logo-card">
+        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="40" rx="6" fill="#1c1f2a"/>
+          <rect x="8" y="8" width="24" height="24" rx="4" fill="#ff9900"/>
+          <text x="40" y="26" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">Amazon</text>
+        </svg>
+      </div>
+      <div class="retailer-logo-card">
+        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="40" rx="6" fill="#1c1f2a"/>
+          <rect x="8" y="8" width="24" height="24" rx="4" fill="#004990"/>
+          <text x="40" y="26" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">Lowe's</text>
+        </svg>
+      </div>
+      <div class="retailer-logo-card coming-soon-retailer">
+        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="40" rx="6" fill="#1c1f2a"/>
+          <rect x="8" y="8" width="24" height="24" rx="4" fill="#0071ce"/>
+          <text x="40" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">Walmart</text>
+          <text x="40" y="34" font-family="Arial,sans-serif" font-size="9" fill="#64748b">Coming soon</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     EMAIL SIGNUP
+════════════════════════════════════════ -->
+<section class="signup" id="signup">
+  <div class="container">
+    <div class="signup-card">
+      <div class="signup-text">
+        <h2>Be first to know when we launch.</h2>
+        <p>We're building the price tracker tool buyers have been asking for. Sign up for early access and we'll let you know the moment it's live.</p>
+        <ul class="signup-bullets">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Free to use, always
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            No account required for browsing
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Email alerts when prices drop
+          </li>
+        </ul>
+      </div>
+      <div class="signup-form-wrap">
+        <form class="signup-form" action="https://formspree.io/f/mvzvzajn" method="POST" onsubmit="handleSignup(event, this)">
+          <label for="signup-email">Email address</label>
+          <input id="signup-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit" class="btn-primary btn-full">Get Early Access</button>
+          <p class="form-disclaimer">No spam. Unsubscribe anytime. We take privacy seriously — see our <a href="privacy.html">Privacy Policy</a>.</p>
+          <div class="form-success" style="display:none;">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            You're on the list! We'll email you at launch.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-icon">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="64" height="64" rx="16" fill="#1c1f2a"/>
+        <rect x="12" y="28" width="22" height="10" rx="3" fill="#f97316"/>
+        <rect x="30" y="24" width="14" height="4" rx="2" fill="#94a3b8"/>
+        <rect x="42" y="23" width="10" height="3" rx="1.5" fill="#cbd5e1"/>
+        <circle cx="18" cy="42" r="5" fill="#0f1117" stroke="#475569" stroke-width="2"/>
+        <circle cx="18" cy="42" r="2" fill="#475569"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <h2>Built by tool buyers, for tool buyers.</h2>
+      <p>
+        ToolSnipe started as a personal frustration. Checking Home Depot, Amazon, and Lowe's separately
+        every time there was a rumored sale — only to miss the deal anyway. We built the tool we wished existed:
+        a single place to see prices across every major retailer, with history charts to verify whether the
+        "sale" is actually a sale.
+      </p>
+      <p>
+        We cover the brands that matter to pros and serious DIYers: Milwaukee M18/M12, DeWalt 20V MAX and FLEXVOLT,
+        Makita 18V LXT and 40V XGT, Ryobi ONE+ 18V, and Hilti. More brands and retailers coming based on demand.
+      </p>
+      <p class="about-contact">
+        Questions? Reach us at <a href="mailto:toolsnipeapp@gmail.com">toolsnipeapp@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="ToolSnipe home">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#f97316"/>
+          <path d="M8 12h4v8H8zM14 8h4v12h-4zM20 10h4v10h-4z" fill="white"/>
+          <path d="M7 22h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">ToolSnipe</span>
+      </a>
+      <p class="footer-tagline">Track tool prices. Never overpay again.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#signup">Get Early Access</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="mailto:toolsnipeapp@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <ul>
+          <li><a href="https://instagram.com/toolsnipe" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://tiktok.com/@toolsnipe" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://x.com/toolsnipe" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li><a href="https://youtube.com/@toolsnipeapp" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 ToolSnipe. All rights reserved.</p>
+      <p class="footer-legal">ToolSnipe is an independent price comparison service. We may earn a commission from purchases made through links on this site.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
